@@ -2,16 +2,11 @@ import emailjs from '@emailjs/browser';
 
 // Khởi tạo EmailJS với public key
 export const initEmailJS = () => {
-  // Sử dụng giá trị hardcoded thay vì biến môi trường
+  // Sử dụng giá trị hardcoded thay vì biến môi trường - đây là key thực tế
   const publicKey = "f3HwCGz2s_dyKkto-";
   
-  if (!publicKey) {
-    console.warn("EmailJS Public Key chưa được cấu hình");
-  } else {
-    console.log("EmailJS đã được khởi tạo thành công");
-  }
-  
   emailjs.init(publicKey);
+  console.log("EmailJS đã được khởi tạo thành công với public key:", publicKey);
 };
 
 // Gửi thông báo có ứng viên mới
