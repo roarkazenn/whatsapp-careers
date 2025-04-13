@@ -1,11 +1,21 @@
 export function Banner() {
   return (
     <section className="relative bg-whatsapp-green text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}></div>
+      <div className="absolute inset-0 bg-black bg-opacity-40">
+        <video
+          className="w-full h-full object-cover opacity-50"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source 
+            src="https://cdn.coverr.co/videos/coverr-team-working-in-an-office-1573/1080p.mp4" 
+            type="video/mp4" 
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Bạn đã sẵn sàng làm việc cùng WhatsApp?</h2>

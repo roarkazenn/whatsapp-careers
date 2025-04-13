@@ -78,7 +78,7 @@ export const defaultJobs: Job[] = [
   {
     id: 1,
     title: "Digital Marketing Manager",
-    location: "Hà Nội / Hồ Chí Minh",
+    location: "Menlo Park, California, USA",
     description: [
       "Phát triển và thực hiện chiến lược marketing số cho WhatsApp Business",
       "Quản lý các chiến dịch quảng cáo trên các nền tảng số",
@@ -92,16 +92,16 @@ export const defaultJobs: Job[] = [
       "Tiếng Anh thông thạo (IELTS 6.5 trở lên)"
     ],
     benefits: [
-      "Mức lương: 25-35 triệu VNĐ (tùy năng lực)",
+      "Mức lương: $8,000 - $12,000/tháng (tùy năng lực)",
       "Thưởng hiệu suất hàng quý",
       "Bảo hiểm sức khỏe cao cấp",
-      "14 ngày phép năm và các ngày nghỉ lễ"
+      "Chính sách nghỉ phép linh hoạt"
     ]
   },
   {
     id: 2,
     title: "Content Marketing Specialist",
-    location: "Hồ Chí Minh",
+    location: "London, United Kingdom",
     description: [
       "Phát triển và sản xuất nội dung cho blog và mạng xã hội của WhatsApp",
       "Xây dựng kế hoạch nội dung phù hợp với chiến lược marketing",
@@ -115,16 +115,16 @@ export const defaultJobs: Job[] = [
       "Kỹ năng quản lý thời gian và tổ chức tốt"
     ],
     benefits: [
-      "Mức lương: 18-25 triệu VNĐ (tùy năng lực)",
+      "Mức lương: $5,000 - $7,500/tháng (tùy năng lực)",
       "Thưởng dự án và thành tích",
-      "Chế độ bảo hiểm sức khỏe",
+      "Chế độ bảo hiểm sức khỏe toàn diện",
       "Môi trường làm việc quốc tế"
     ]
   },
   {
     id: 3,
     title: "Social Media Marketing Lead",
-    location: "Hà Nội",
+    location: "Dublin, Ireland",
     description: [
       "Phát triển và thực hiện chiến lược truyền thông xã hội của WhatsApp",
       "Quản lý nhóm social media và lên kế hoạch nội dung hàng tháng",
@@ -138,7 +138,7 @@ export const defaultJobs: Job[] = [
       "Kỹ năng phân tích dữ liệu mạnh mẽ"
     ],
     benefits: [
-      "Mức lương: 30-40 triệu VNĐ (tùy năng lực)",
+      "Mức lương: $7,000 - $10,000/tháng (tùy năng lực)",
       "Thưởng hiệu suất hàng quý",
       "Bảo hiểm sức khỏe toàn diện",
       "Cơ hội đào tạo và phát triển quốc tế"

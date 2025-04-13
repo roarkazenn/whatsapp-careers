@@ -1,6 +1,5 @@
 import { Header } from "@/components/header";
 import { Banner } from "@/components/banner";
-import { LocationDisplay } from "@/components/location-display";
 import { Introduction } from "@/components/introduction";
 import { JobListings } from "@/components/job-listings";
 import { Contact } from "@/components/contact";
@@ -37,7 +36,6 @@ export default function Home() {
     <div className="min-h-screen bg-whatsapp-bg font-roboto">
       <Header />
       <Banner />
-      <LocationDisplay />
       <Introduction />
       <JobListings />
       <Contact />

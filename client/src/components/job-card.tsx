@@ -74,7 +74,8 @@ export function JobCard({ job }: JobCardProps) {
           {isFormVisible && (
             <div className="application-form mt-4 p-4 border border-gray-200 rounded-lg form-appear">
               <ApplicationForm 
-                jobId={job.id} 
+                jobId={job.id}
+                job={job}
                 onSubmitSuccess={handleFormSubmitSuccess}
               />
             </div>
