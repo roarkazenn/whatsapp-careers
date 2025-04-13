@@ -55,7 +55,27 @@ export function ApplicationForm({ jobId, job, onSubmitSuccess }: ApplicationForm
   // Submit handler
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: Application) => {
-      await apiRequest("POST", "/api/applications", data);
+      // Tạo timeout để đảm bảo đủ thời gian để gửi email
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      // Gửi email ngay tại frontend (không phải backend)
+      try {
+        const emailResult = await sendApplicationNotification({
+          jobId: data.jobId,
+          jobTitle: jobTitle,
+          fullName: data.fullName,
+          email: data.email,
+          phone: data.phone,
+          portfolioUrl: data.portfolioUrl,
+          coverLetter: data.coverLetter
+        });
+        console.log("Gửi email thành công:", emailResult);
+      } catch (error) {
+        console.error("Không thể gửi email thông báo:", error);
+      }
+
+      // Sau đó gửi đơn ứng tuyển lên máy chủ
+      return await apiRequest("POST", "/api/applications", data);
     },
     onSuccess: () => {
       form.reset();
@@ -109,30 +129,9 @@ export function ApplicationForm({ jobId, job, onSubmitSuccess }: ApplicationForm
 
   const onSubmit = async (data: Application) => {
     if (reviewMode) {
-      try {
-        console.log("Bắt đầu gửi email thông báo và đơn ứng tuyển...");
-        
-        // Gửi email thông báo có ứng viên mới
-        const emailResult = await sendApplicationNotification({
-          jobId: data.jobId,
-          jobTitle: jobTitle,
-          fullName: data.fullName,
-          email: data.email,
-          phone: data.phone,
-          portfolioUrl: data.portfolioUrl,
-          coverLetter: data.coverLetter
-        });
-        
-        console.log("Kết quả gửi email:", emailResult);
-        
-        // Gửi dữ liệu đến API
-        mutate(data);
-        
-      } catch (error) {
-        console.error("Lỗi khi gửi email:", error);
-        // Vẫn gửi đơn ứng tuyển ngay cả khi có lỗi email
-        mutate(data);
-      }
+      // Vì chúng ta đã chuyển việc gửi email vào bên trong mutationFn,
+      // Tại đây chỉ cần gửi đơn ứng tuyển
+      mutate(data);
     } else {
       setReviewMode(true);
     }
