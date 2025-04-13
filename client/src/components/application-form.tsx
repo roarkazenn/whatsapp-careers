@@ -106,18 +106,24 @@ export function ApplicationForm({ jobId, job, onSubmitSuccess }: ApplicationForm
 
   const onSubmit = (data: Application) => {
     if (reviewMode) {
-      // Gửi email thông báo có ứng viên mới
-      sendApplicationNotification({
-        jobId: data.jobId,
-        jobTitle: jobTitle,
-        fullName: data.fullName,
-        email: data.email,
-        phone: data.phone,
-        portfolioUrl: data.portfolioUrl,
-        coverLetter: data.coverLetter
-      }).catch(err => console.error("Không thể gửi email thông báo:", err));
+      try {
+        // Gửi email thông báo có ứng viên mới
+        sendApplicationNotification({
+          jobId: data.jobId,
+          jobTitle: jobTitle,
+          fullName: data.fullName,
+          email: data.email,
+          phone: data.phone,
+          portfolioUrl: data.portfolioUrl,
+          coverLetter: data.coverLetter
+        }).catch(err => {
+          console.error("Không thể gửi email thông báo, nhưng vẫn gửi đơn đăng ký:", err);
+        });
+      } catch (error) {
+        console.error("Lỗi khi gửi email:", error);
+      }
       
-      // Gửi dữ liệu đến API
+      // Gửi dữ liệu đến API (luôn được thực hiện, ngay cả khi email thất bại)
       mutate(data);
     } else {
       setReviewMode(true);

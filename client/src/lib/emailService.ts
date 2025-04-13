@@ -41,14 +41,10 @@ export const sendApplicationNotification = async (applicationData: {
         minute: '2-digit',
       }),
     };
-
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     
-    if (!serviceId || !templateId) {
-      console.warn("EmailJS Service ID hoặc Template ID chưa được cấu hình");
-      return { success: false, error: "Thiếu cấu hình EmailJS" };
-    }
+    // Sử dụng trực tiếp các giá trị đã cung cấp 
+    const serviceId = "${EMAILJS_SERVICE_ID}";
+    const templateId = "${EMAILJS_TEMPLATE_ID}";
     
     const response = await emailjs.send(
       serviceId,
@@ -85,13 +81,9 @@ export const sendContactNotification = async (contactData: {
       }),
     };
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    
-    if (!serviceId || !templateId) {
-      console.warn("EmailJS Service ID hoặc Template ID chưa được cấu hình");
-      return { success: false, error: "Thiếu cấu hình EmailJS" };
-    }
+    // Sử dụng trực tiếp các giá trị đã cung cấp 
+    const serviceId = "${EMAILJS_SERVICE_ID}";
+    const templateId = "${EMAILJS_TEMPLATE_ID}";
     
     const response = await emailjs.send(
       serviceId,
