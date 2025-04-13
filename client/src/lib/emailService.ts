@@ -2,8 +2,8 @@ import emailjs from '@emailjs/browser';
 
 // Khởi tạo EmailJS với public key
 export const initEmailJS = () => {
-  // Sử dụng import.meta.env thay vì process.env cho ứng dụng Vite
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  // Sử dụng giá trị hardcoded thay vì biến môi trường
+  const publicKey = "f3HwCGz2s_dyKkto-";
   
   if (!publicKey) {
     console.warn("EmailJS Public Key chưa được cấu hình");
@@ -11,7 +11,7 @@ export const initEmailJS = () => {
     console.log("EmailJS đã được khởi tạo thành công");
   }
   
-  emailjs.init(publicKey || '');
+  emailjs.init(publicKey);
 };
 
 // Gửi thông báo có ứng viên mới
@@ -43,15 +43,22 @@ export const sendApplicationNotification = async (applicationData: {
     };
     
     // Sử dụng trực tiếp các giá trị đã cung cấp 
-    const serviceId = "${EMAILJS_SERVICE_ID}";
-    const templateId = "${EMAILJS_TEMPLATE_ID}";
+    const serviceId = "service_pijwhaf";
+    const templateId = "template_6f3ie0q";
+    
+    console.log("Đang gửi email với:", {
+      serviceId,
+      templateId,
+      templateParams
+    });
     
     const response = await emailjs.send(
       serviceId,
       templateId,
       templateParams
     );
-
+    
+    console.log("Kết quả gửi email:", response);
     return { success: true, response };
   } catch (error) {
     console.error('Không thể gửi email thông báo:', error);
@@ -82,14 +89,22 @@ export const sendContactNotification = async (contactData: {
     };
 
     // Sử dụng trực tiếp các giá trị đã cung cấp 
-    const serviceId = "${EMAILJS_SERVICE_ID}";
-    const templateId = "${EMAILJS_TEMPLATE_ID}";
+    const serviceId = "service_pijwhaf";
+    const templateId = "template_6f3ie0q";
+    
+    console.log("Đang gửi email liên hệ với:", {
+      serviceId,
+      templateId,
+      templateParams
+    });
     
     const response = await emailjs.send(
       serviceId,
       templateId,
       templateParams
     );
+    
+    console.log("Kết quả gửi email liên hệ:", response);
 
     return { success: true, response };
   } catch (error) {

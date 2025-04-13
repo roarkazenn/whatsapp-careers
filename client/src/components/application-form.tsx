@@ -24,6 +24,7 @@ export function ApplicationForm({ jobId, job, onSubmitSuccess }: ApplicationForm
   const [step, setStep] = useState(1);
   const [fileData, setFileData] = useState<File | null>(null);
   const [reviewMode, setReviewMode] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false); // Thêm trạng thái hiển thị thành công
   const [countries, setCountries] = useState([
     { code: "us", name: "United States" },
     { code: "uk", name: "United Kingdom" },
