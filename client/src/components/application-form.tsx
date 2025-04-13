@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { applicationFormSchema, type Application } from "@shared/schema";
 import { useEffect, useState, useRef } from "react";
 import { sendApplicationNotification } from "@/lib/emailService";
+import { SuccessModal } from "@/components/success-modal";
 
 interface ApplicationFormProps {
   jobId: number;
@@ -58,7 +59,8 @@ export function ApplicationForm({ jobId, job, onSubmitSuccess }: ApplicationForm
     },
     onSuccess: () => {
       form.reset();
-      onSubmitSuccess();
+      setIsSuccess(true); // Đánh dấu form đã gửi thành công
+      onSubmitSuccess(); // Gọi hàm callback từ component cha
     }
   });
 
@@ -146,7 +148,9 @@ export function ApplicationForm({ jobId, job, onSubmitSuccess }: ApplicationForm
 
   return (
     <div>
-      {!reviewMode ? (
+      {isSuccess ? (
+        <SuccessModal onClose={() => setIsSuccess(false)} />
+      ) : !reviewMode ? (
         <>
           <div className="flex justify-between items-center mb-6">
             <h4 className="font-medium text-gray-700">Thông tin ứng viên</h4>
