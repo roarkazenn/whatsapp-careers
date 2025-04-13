@@ -78,53 +78,53 @@ export const defaultJobs: Job[] = [
   {
     id: 1,
     title: "Digital Marketing Manager",
-    location: "Menlo Park, California, USA",
+    location: "Austin, Texas, USA",
     description: [
-      "Phát triển và thực hiện chiến lược marketing số cho WhatsApp Business",
-      "Quản lý các chiến dịch quảng cáo trên các nền tảng số",
-      "Phân tích dữ liệu và báo cáo hiệu suất marketing",
-      "Tối ưu hóa trải nghiệm người dùng trên nền tảng WhatsApp Business"
+      "Develop and implement digital marketing strategies for WhatsApp Business",
+      "Manage advertising campaigns across digital platforms",
+      "Analyze data and report on marketing performance",
+      "Optimize user experience on the WhatsApp Business platform"
     ],
     requirements: [
-      "Tối thiểu 3 năm kinh nghiệm trong marketing số",
-      "Kiến thức sâu về SEO, SEM, và phân tích dữ liệu",
-      "Kỹ năng quản lý dự án và làm việc nhóm tốt",
-      "Tiếng Anh thông thạo (IELTS 6.5 trở lên)"
+      "Minimum 3 years experience in digital marketing",
+      "Deep knowledge of SEO, SEM, and data analytics",
+      "Strong project management and teamwork skills",
+      "Professional English communication skills"
     ],
     benefits: [
-      "Mức lương: $8,000 - $12,000/tháng (tùy năng lực)",
-      "Thưởng hiệu suất hàng quý",
-      "Bảo hiểm sức khỏe cao cấp",
-      "Chính sách nghỉ phép linh hoạt"
+      "Salary: $8,000 - $12,000/month (based on experience)",
+      "Quarterly performance bonuses",
+      "Premium health insurance",
+      "Flexible vacation policy"
     ]
   },
   {
     id: 2,
     title: "Content Marketing Specialist",
-    location: "London, United Kingdom",
+    location: "Seattle, Washington, USA",
     description: [
-      "Phát triển và sản xuất nội dung cho blog và mạng xã hội của WhatsApp",
-      "Xây dựng kế hoạch nội dung phù hợp với chiến lược marketing",
-      "Tối ưu hóa nội dung cho SEO và tăng lưu lượng truy cập",
-      "Theo dõi hiệu suất nội dung và đề xuất cải tiến"
+      "Develop and produce content for WhatsApp's blog and social media",
+      "Build content plans aligned with marketing strategy",
+      "Optimize content for SEO and increase traffic",
+      "Monitor content performance and suggest improvements"
     ],
     requirements: [
-      "2+ năm kinh nghiệm trong lĩnh vực marketing nội dung",
-      "Khả năng viết nội dung marketing hấp dẫn",
-      "Hiểu biết về SEO và các xu hướng nội dung số",
-      "Kỹ năng quản lý thời gian và tổ chức tốt"
+      "2+ years experience in content marketing",
+      "Ability to write engaging marketing content",
+      "Understanding of SEO and digital content trends",
+      "Strong time management and organizational skills"
     ],
     benefits: [
-      "Mức lương: $5,000 - $7,500/tháng (tùy năng lực)",
-      "Thưởng dự án và thành tích",
-      "Chế độ bảo hiểm sức khỏe toàn diện",
-      "Môi trường làm việc quốc tế"
+      "Salary: $5,000 - $7,500/month (based on experience)",
+      "Project and achievement bonuses",
+      "Comprehensive health insurance",
+      "International work environment"
     ]
   },
   {
     id: 3,
     title: "Social Media Marketing Lead",
-    location: "Dublin, Ireland",
+    location: "New York City, New York, USA",
     description: [
       "Phát triển và thực hiện chiến lược truyền thông xã hội của WhatsApp",
       "Quản lý nhóm social media và lên kế hoạch nội dung hàng tháng",
